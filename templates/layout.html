@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'restaurants.js') }}"></script>
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Handle form submission
+            document.querySelector("#navbarNavAltMarkup form").addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent default form submission
+                var searchTerm = document.querySelector("#searchInput").value.trim(); // Get the search term from the input field
+                if (searchTerm !== '') {
+                    // Call the search function from restaurants.js
+                    search(searchTerm); // calling my function from returaunts.js
+                }
+            });
+        });
+    </script>
+    
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" id="house" href="/">
+      <i class="fa-solid fa-house" title="home button" ></i> <!-- Home icon -->
+        <span id="home_text">Home</span>
+    </a>
+    <!-- <i class="fa-solid fa-house" id="house" ></i>
+    <a class="navbar-brand" href="/">Home</a> -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse nav_stuff" id="navbarNavAltMarkup">
+      <div class="navbar-nav me-auto" >
+        <a class="nav-link "  href="/add">Add a Restaurant</a>
+        <!-- Your existing navbar links -->
+      </div>
+      <!-- Search box with id added -->
+      <form id="searchForm" class="d-flex">
+        <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!-- Content area -->
+<div>   
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>
+
+
+
+
+
+

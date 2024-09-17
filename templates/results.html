@@ -1,0 +1,39 @@
+
+
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<head>
+    
+        <script type="text/javascript" src="{{ url_for('static', filename = 'results.js') }}"></script>
+   
+    <title>Search Results</title>
+</head>
+
+<body>
+    <div class="container-fluid green">
+    <div class="container SearchContain">
+        <h1 id="results_header"> 
+            <span id="searchResults"></span> 
+            results for '{{term}}'
+
+        </h1> 
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                  <div id="searchResultsContainer">
+            </div>
+
+        </div>
+       
+           
+        </div>
+</div>
+</div>
+</body>
+
+{% endblock %} 
+

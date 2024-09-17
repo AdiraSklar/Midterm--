@@ -1,0 +1,179 @@
+{% extends "layout.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Edit {{ restaurant.name }}</title>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'edit.js') }}"></script>
+</head>
+<body>
+    <div class="container-fluid pink ">
+        
+        <form id="edit_form">
+                <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="row padding"></div>
+                                <div class="row">
+                                    <label class="niceFont" for="name"> Name:&nbsp;&nbsp;&nbsp;&nbsp;</label><br>
+                                    <input type="text" id="name" name="name" value="{{ restaurant.name }}"><br>
+                                </div>
+                                <br>
+                                <div class="row">
+                                   
+                                    <label class="niceFont" for="pic">Pic URL:&nbsp;&nbsp;&nbsp;&nbsp;</label><br>
+                                    <input type="text" id="pic" name="pic"  cols="50"  value="{{ restaurant.pic }}"><br>
+                                </div>
+
+                                <div class="row">
+                                    <div class="container star_container">
+                                        <br>
+                                        <label class="niceFont" for="stars">Stars: </label>
+                                        <input type="number" id="stars" name="stars" placeholder="0" min="1" max="5" value="{{ restaurant.stars }}"><br><br>
+                                    </span>
+                                    </div>
+                                </div>
+                            
+                                <div class="row">
+                                    
+                                    </div>
+                                    <div class="col-md-6 pad">
+                                        <label class="niceFont" for="dishes">Add Three Popular Dishes:</label><br>
+                                        <label class="niceFont" for="dish1">Dish 1:</label><br>
+                                        <input type="text" id="dish1" name="dish1" value="{{ restaurant.dishes[0] }}"><br><br>
+
+                                        <label class="niceFont" for="dish2">Dish 2:</label><br>
+                                        <input type="text" id="dish2" name="dish2" value="{{ restaurant.dishes[1] }}"><br><br>
+
+                                        <label  class="niceFont"for="dish3">Dish 3:</label><br>
+                                        <input type="text" id="dish3" name="dish3" value="{{ restaurant.dishes[2] }}"><br><br>
+                                    </div>
+                            
+                                <div class="row">
+                                    <div class=" pad" >
+                                        <label class="niceFont" for="about">About:</label><br>
+                                        <textarea id="about" name="about" rows="4" cols="50" maxlength="700">{{ restaurant.about }}</textarea><br><br>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div>
+                                        <button class="buttons" type="submit">Submit</button> <span>&nbsp;&nbsp;&nbsp;&nbsp</span>
+                                        <button class="buttons" type="button" id="discardChanges">Discard Changes</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+                                
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="location address_space ">
+                                                Location:
+                                            </div>
+                                    </div>
+
+                                        <div class="col-md-6">
+                                            <br></b>
+                                            <label for="location"></label>
+                                            <select id="location" name="location" required>
+                                                <option value="" disabled>Select a location</option>
+                                                <option value="Battery Park City" {% if restaurant.location == 'Battery Park City' %}selected{% endif %}>Battery Park City</option>
+                                                <option value="Central Harlem" {% if restaurant.location == 'Central Harlem' %}selected{% endif %}>Central Harlem</option>
+                                                <option value="Chelsea" {% if restaurant.location == 'Chelsea' %}selected{% endif %}>Chelsea</option>
+                                                <option value="Chinatown" {% if restaurant.location == 'Chinatown' %}selected{% endif %}>Chinatown</option>
+                                                <option value="East Harlem" {% if restaurant.location == 'East Harlem' %}selected{% endif %}>East Harlem</option>
+                                                <option value="East Village" {% if restaurant.location == 'East Village' %}selected{% endif %}>East Village</option>
+                                                <option value="Financial District" {% if restaurant.location == 'Financial District' %}selected{% endif %}>Financial District</option>
+                                                <option value="Flatiron District" {% if restaurant.location == 'Flatiron District' %}selected{% endif %}>Flatiron District</option>
+                                                <option value="Gramercy Park" {% if restaurant.location == 'Gramercy Park' %}selected{% endif %}>Gramercy Park</option>
+                                                <option value="Greenwich Village" {% if restaurant.location == 'Greenwich Village' %}selected{% endif %}>Greenwich Village</option>
+                                                <option value="Harlem" {% if restaurant.location == 'Harlem' %}selected{% endif %}>Harlem</option>
+                                                <option value="Hell's Kitchen" {% if restaurant.location == "Hell's Kitchen" %}selected{% endif %}>Hell's Kitchen</option>
+                                                <option value="Inwood" {% if restaurant.location == 'Inwood' %}selected{% endif %}>Inwood</option>
+                                                <option value="Kips Bay" {% if restaurant.location == 'Kips Bay' %}selected{% endif %}>Kips Bay</option>
+                                                <option value="Lenox Hill" {% if restaurant.location == 'Lenox Hill' %}selected{% endif %}>Lenox Hill</option>
+                                                <option value="Lincoln Square" {% if restaurant.location == 'Lincoln Square' %}selected{% endif %}>Lincoln Square</option>
+                                                <option value="Little Italy" {% if restaurant.location == 'Little Italy' %}selected{% endif %}>Little Italy</option>
+                                                <option value="Lower East Side" {% if restaurant.location == 'Lower East Side' %}selected{% endif %}>Lower East Side</option>
+                                                <option value="Manhattan Valley" {% if restaurant.location == 'Manhattan Valley' %}selected{% endif %}>Manhattan Valley</option>
+                                                <option value="Marble Hill" {% if restaurant.location == 'Marble Hill' %}selected{% endif %}>Marble Hill</option>
+                                                <option value="Meatpacking District" {% if restaurant.location == 'Meatpacking District' %}selected{% endif %}>Meatpacking District</option>
+                                                <option value="Midtown" {% if restaurant.location == 'Midtown' %}selected{% endif %}>Midtown</option>
+                                                <option value="Morningside Heights" {% if restaurant.location == 'Morningside Heights' %}selected{% endif %}>Morningside Heights</option>
+                                                <option value="Murray Hill" {% if restaurant.location == 'Murray Hill' %}selected{% endif %}>Murray Hill</option>
+                                                <option value="NoHo" {% if restaurant.location == 'NoHo' %}selected{% endif %}>NoHo</option>
+                                                <option value="Nolita" {% if restaurant.location == 'Nolita' %}selected{% endif %}>Nolita</option>
+                                                <option value="Roosevelt Island" {% if restaurant.location == 'Roosevelt Island' %}selected{% endif %}>Roosevelt Island</option>
+                                                <option value="SoHo" {% if restaurant.location == 'SoHo' %}selected{% endif %}>SoHo</option>
+                                                <option value="South Street Seaport" {% if restaurant.location == 'South Street Seaport' %}selected{% endif %}>South Street Seaport</option>
+                                                <option value="South Village" {% if restaurant.location == 'South Village' %}selected{% endif %}>South Village</option>
+                                                <option value="Stuyvesant Town" {% if restaurant.location == 'Stuyvesant Town' %}selected{% endif %}>Stuyvesant Town</option>
+                                                <option value="Theater District" {% if restaurant.location == 'Theater District' %}selected{% endif %}>Theater District</option>
+                                                <option value="Tribeca" {% if restaurant.location == 'Tribeca' %}selected{% endif %}>Tribeca</option>
+                                                <option value="Two Bridges" {% if restaurant.location == 'Two Bridges' %}selected{% endif %}>Two Bridges</option>
+                                                <option value="Upper East Side" {% if restaurant.location == 'Upper East Side' %}selected{% endif %}>Upper East Side</option>
+                                                <option value="Upper West Side" {% if restaurant.location == 'Upper West Side' %}selected{% endif %}>Upper West Side</option>
+                                                <option value="Washington Heights" {% if restaurant.location == 'Washington Heights' %}selected{% endif %}>Washington Heights</option>
+                                                <option value="West Village" {% if restaurant.location == 'West Village' %}selected{% endif %}>West Village</option>
+                                                <option value="Yorkville" {% if restaurant.location == 'Yorkville' %}selected{% endif %}>Yorkville</option>
+                                            </select><br><br>
+                                        </div>
+                                    </div>
+                            
+                                <div class="row padding">
+                                    <div class="col-md-2">
+                                        <div class="location hours_space">
+                                            Hours:
+                                        </div>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <label for="hours"></label><br>
+                            
+                                            {% for day, hours in restaurant.hours.items() %}
+                                            <label for="edit_{{ day }}_hours">{{ day }}:</label>
+                                            <!-- Remove extra spaces using strip method -->
+                                            {% set opening_hours = hours.split('-')[0].strip() %}
+                                            {% set closing_hours = hours.split('-')[1].strip() %}
+                                            <input type="time" id="edit_{{day}}_opening_hours" name="edit_{{day}}_opening_hours" value="{{opening_hours}}">
+                                            -
+                                            <input type="time" id="edit_{{day}}_closing_hours" name="edit_{{day}}_closing_hours" value="{{closing_hours}}"><br><br>
+                                            {% endfor %}
+                        
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="location address_space ">
+                                            Address:
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="address"></label>
+                                        <input type="text" id="address" name="address" value="{{ restaurant.address }}"><br><br>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="location address_space ">
+                                            Phone:
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phone">(XXX) XXX-XXXX :</label><br>
+                                        <input type="text" type="tel" id="phone" name="phone" value="{{ restaurant.phone }}"><br><br>
+                                    </div>
+                                </div> 
+                            </div>
+                    </div>   
+                </div>   
+            </div>
+        </form>
+        <input type="hidden" id="restaurant_id" value="{{restaurant.id}}">
+    </div> 
+</body>
+{% endblock %}
+
+                

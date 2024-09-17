@@ -1,0 +1,227 @@
+
+
+
+{% extends "layout.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+   
+ 
+    
+</head>
+<body>
+<div class="container-fluid pink ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <h1 class="name">{{ restaurant.name }}</h1>
+                </div>
+                <div class="row">
+                    <div class="rest_pic_container" alt="Photo of food from {{ restaurant.name }}"></dic>
+                        <img class="img-fluid rest_pic" src="{{ restaurant.pic }}" >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container star_container">
+                        <div alt="{{ restaurant.stars }} out of 5 stars">
+                            {% for _ in range(restaurant.stars) %}
+                                <span><i class="fas fa-star stars_icon"></i></span>
+                            {% endfor %}
+                            {% for _ in range(5 - restaurant.stars) %}
+                                <span><i class="far fa-star stars_icon"></i></span>
+                            {% endfor %}
+                        </div>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 pad">
+                        <div class="bestKnown">
+                            Best Know For: 
+                        </div>
+                    </div>
+                    <div class="col-md-6 pad">
+                        <div class="dishes">
+                            {% for dish in restaurant.dishes %}
+                            {{ dish }}<br>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="about pad" >
+                        {{ restaurant.about }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="row">
+                        <div class="space"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10"></div>
+                    <div class="col-md-2">
+                        <span>Edit</span>
+                        <button id="edit_button">
+                            <span><i alt= "edit button" class="fa-solid fa-pen-to-square"></i></span>
+                            <span> </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="space"></div>
+            </div>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-3">
+                        <div class="location ">
+                            Location:
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <a class="location_link " href="#" onclick="searchByLocation('{{ restaurant.location }}'); return false;">{{ restaurant.location }}</a>
+                    </div>
+                </div>
+
+                {% if restaurant.additional_locations %}
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-3">
+                        <div class="location add">
+                            Additional Locations:
+                        </div>
+                    </div>
+                    <div class="col-md-6 addloc">
+                            {% for element in restaurant.additional_locations %}
+                                {% set loc = restaurant_objects[element] %}
+                                <a class="location_link  addloc" href="/view/{{ element }}">{{ loc.location }}</a>
+                            {% endfor %}
+                       
+                    </div>
+                </div>
+                {% endif %}
+
+                <div class="row padding">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-3">
+                        <div class="location hours_space">
+                            Hours:
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        
+                            {% for day, military_hours in restaurant.hours.items() %}
+                            {% if military_hours.strip() == '-' %}
+                            <p>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="day">{{ day }}:</div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="hours_times">Closed</div>
+                                </div>
+                            </div>
+                        </p>
+                            {% else %}
+                                {% set military_parts = military_hours.split('-') %}
+                                {% set start_hour, start_minute = military_parts[0].strip().split(':') %}
+                                {% set end_hour, end_minute = military_parts[1].strip().split(':') %}
+                                {% set start_period = 'AM' %}
+                                {% set end_period = 'AM' %}
+                                {% if start_hour|int == 0 %}
+                                    {% set start_hour = '12' %}
+                                {% elif start_hour|int >= 12 %}
+                                    {% set start_period = 'PM' %}
+                                    {% if start_hour|int > 12 %}
+                                        {% set start_hour = (start_hour|int - 12)|string %}
+                                    {% endif %}
+                                {% endif %}
+                                {% if end_hour|int == 0 %}
+                                    {% set end_hour = '12' %}
+                                {% elif end_hour|int >= 12 %}
+                                    {% set end_period = 'PM' %}
+                                    {% if end_hour|int > 12 %}
+                                        {% set end_hour = (end_hour|int - 12)|string %}
+                                    {% endif %}
+                                {% endif %}
+                                <!-- Display the formatted time here -->
+                                <p class="he">
+                                    <div class="row ">
+                                    <div class="col-md-3">
+                                    <span class="day">{{ day }}: </span> 
+                                    </div>
+                                    <div class="col-md-8">
+                                        <span class="hours_times"> {{ start_hour }}:{{ start_minute }} {{ start_period }} - {{ end_hour }}:{{ end_minute }} {{ end_period }}</span>  
+                                    </div>
+                                    </div>
+                                </p>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+            </div>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-3">
+                        <div class="location address_space ">
+                            Address:
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="address sp">
+                        {{ restaurant.address }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-3">
+                        <div class="location address_space ">
+                            Phone:
+                        </div>
+                    </div>
+                    <div class="col-md-6 ">
+                        
+                        <div class="address sp">
+                            {{ restaurant.phone }}
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>  
+    </div>      
+</div>
+
+
+        
+
+
+  
+    <script>
+        // // Convert military time to regular time after page load
+        // window.addEventListener('DOMContentLoaded', function() {
+        //     // Find all elements with class 'military-time' and convert their content
+        //     document.querySelectorAll('.military-time').forEach(element => {
+        //         element.textContent = militaryToRegularTime(element.textContent);
+        //     });
+            
+            // Add event listener to the edit button
+            document.getElementById('edit_button').addEventListener('click', function() {
+                // Redirect to the edit page for the specific restaurant
+                window.location.href = '/edit/{{ restaurant.id }}';
+            });
+
+            function searchByLocation(location) {
+                 search(location)
+                
+
+           }
+      
+    </script>
+
+
+</body>
+
+{% endblock %}

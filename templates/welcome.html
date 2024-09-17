@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<head>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'welcome.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+</head>
+<body>
+    <div class="container-fluid" id="greetings_container">
+                    <img class="logo img-fluid" src="https://i.ibb.co/HP83GZd/logo.png" alt=" Vegan  and Kosher in NYC logo" >
+            </div>
+           
+    <div class="container-fluid pink-strip">
+        <div class="container" >
+            <div class="trend_container" >
+                <span><i class="fa-solid fa-arrow-trend-up icon"></i></span>
+                <span class="Trending">now trending</span>
+            </div>
+    
+        </div>
+        <div class="container" id="container_pop">
+        
+            <div class="row" id="height_row">
+
+                <div class="col-md-4">
+                    <div id="popularItemsContainer1" class="text_pop"></div>
+                    <h3 class="text_edits"></h3>
+                </div>
+                <div class="col-md-4">
+                    <div id="popularItemsContainer2" class="text_pop"></div>
+                </div>
+                <div class="col-md-4">
+                    <div id="popularItemsContainer3" class="text_pop"></div>
+                </div>
+                
+            </div> 
+        </div>
+    </div>
+    <div class="container-fluid" id="grey">
+        <div class="blurb">
+        <br>
+        Discover the best of both worlds at Vegan Kosher NYC. 
+        Our platform showcases restaurants in New York City that offer 
+        100% vegan dishes while being fully certified Kosher. With our constantly updated selection, finding your next vegan and kosher dining experience has never been easier. Search by location, or even your favorite dish, and we will load up some delectable results! 
+     
+    <br>
+     <br>
+     <br>
+     <br>
+    </div>
+</div>
+</div>
+</body>
+</html>
+       
+
+{% endblock %}
+
+
+

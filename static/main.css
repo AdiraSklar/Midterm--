@@ -1,0 +1,541 @@
+
+#container_pop{
+    height: 40vh;
+   
+}
+
+
+.image-container img {
+    width: 100%; /* Make the image take up the entire width of its container */
+    height: 60%; /* Make the image take up the entire height of its container */
+    object-fit: cover; /* Stretch the image to cover the entire container */
+    border-radius: 15%;
+    border-style:outset;
+}
+
+#container_home{
+    background-color:#F6DFDC;
+}
+
+
+.pink-strip {
+    background-color:#F6DFDC;
+    width: 100%;
+    height: 45vh;
+    
+}
+
+
+#greetings_container{
+    background-image: url('https://i.ibb.co/9Yr3QK8/Untitled.jpg');
+    background-size: cover; /* Cover the entire container */
+    background-position: center 45% ; /* Center the background image */
+    width: 100%; /* Adjust width as needed */
+    height: 40vh; /* Adjust height as needed */
+   
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    
+  
+    
+    
+
+    /* Add any other styles as needed */
+  }
+  
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative; /* Add this to allow absolute positioning of pseudo-element */
+    border-radius: 12%;
+  }
+  
+  .image-container:hover::after {
+    content: '';
+    position: absolute;
+    width: 99%;
+    height: 25px;
+    top: 0;
+   
+    background-color: rgb(13, 119, 79);
+    transition: all ease-in-out .2s;
+  }
+  
+  /* .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  } */
+  
+ .text_pop{
+    text-align: center;
+ }
+ .text_pop h3 {
+    /* Your CSS styles for the h3 elements inside text_pop containers */
+    color: rgb(13, 119, 79); /* Example color */
+    font-size: x-large; /* Example font size */
+    padding:0px;
+    font-family:'Roboto';
+    font-weight: bold;
+    /* Add more styles as needed */
+
+    font-family: 'Roboto';
+    color: azure;
+    text-align: center;
+    padding-top: 20px;
+    font-size: medium;
+    display: inline-block;
+    background-color:rgb(13, 119, 79); /* Example background color */
+    padding: 15px 25px; /* Adjust padding as needed */
+    border-radius: 0 70px; /* Adjust border radius as needed */
+    transform: rotate(0deg);
+}
+
+.Trending {
+   
+    color: black; /* Text color */
+    display: inline-block;
+    padding-left: 2px;
+    font-weight: bold;
+  
+    
+}
+
+.icon {
+    background-color: ;
+    font-size: medium;
+    margin-left: 1%;
+    color:azure;
+    border-radius: 90px; 
+    background-color: rgb(13, 119, 79);;
+    padding:0.5%;
+
+}
+.trend_container{
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+
+.nav_stuff{
+    padding-left:54%;
+}
+
+#house{
+    margin-right: 1%;
+    margin-left: 3%;
+    color:rgb(13, 119, 79);
+
+}
+
+#home_text{
+    padding-left: 8%;
+    color: black;
+}
+
+
+.highlight{
+    background-color: pink;
+    font-weight: bold;
+}
+#veganText{
+    color:rgb(13, 119, 79);
+    font-size: xx-large;
+    margin-left: 25%;
+   
+}
+
+
+  
+.logo{
+    width: 40%;
+    height: 70%;
+    overflow: hidden; /* Ensure any overflow is hidden */
+    object-fit: contain;
+    position: absolute; 
+    top:0;
+
+}
+
+#grey{
+
+ background-color: rgb(235, 233, 233);
+}
+.blurb{
+    font-size: x-large;
+    text-align: center;
+    padding-left: 5%;
+    padding-right:5%;
+}
+
+.name{
+    padding-top: 8%;
+    padding-bottom: 4%;
+
+    font-size: xx-large;
+    font-family:'Gill Sans', sans-serif;
+    font-weight: 110;
+}
+
+.rest_pic_container{
+    max-width: 100%;
+
+
+  
+}
+.rest_pic{
+    border: solid;
+    border-color:rgb(13, 119, 79);
+}
+
+
+.stars_icon{
+    color: rgb(255, 206, 56);
+    font-size: 190%;
+    padding-top: 2%;
+
+   
+}
+
+.star_container{
+    max-width: 100%;
+    padding: 0%;
+}
+.pad{
+    padding: 0%;
+}
+.bestKnown{
+    padding-left: 2%;
+    padding-top: 8.5%;
+    font-size: larger;
+    font-family:'Gill Sans', sans-serif;
+    
+    
+}
+
+.dishes{
+    padding-top: 6%;
+    font-family:'Gill Sans', sans-serif;
+    font-weight: 580;
+    font-size: larger;
+    color: rgb(84, 37, 37);
+    font-weight: 140%;
+}
+
+.about{
+    padding-top: 4%;
+    font-size: medium;
+    text-align: left;
+    font-family:'Gill Sans', sans-serif;
+    font-weight: 300;
+    color: rgb(78, 58, 58);
+}
+.pink{
+    background-color: rgb(255, 248, 248);
+    height: 130vh;
+}
+.green{
+    background-color: rgb(234, 242, 240);
+    height: 200vh;
+
+}
+
+.pinker{
+    background-color: rgb(253, 244, 245);
+    height: 130vh;
+
+}
+.location{
+    color: rgb(78, 58, 58);
+    font-family:'Gill Sans', sans-serif;
+    font-weight: 350;
+    font-size: 1.5em;
+   
+
+}
+.space{
+  padding-top:2%;
+   padding-bottom: 4%;
+} 
+
+.location_link{
+    text-decoration-line: underline;
+    font-family:'Gill Sans', sans-serif;
+    font-size: x-large;
+}
+
+.padding{
+    padding-top: 3%;
+}
+.day{
+    font-weight: bold;
+    
+}
+
+.hours_times{
+  
+    font-family: sans-serif;
+    font-family:'Gill Sans', sans-serif;
+    font-weight: 110;
+   
+
+
+
+}
+.hours_space{
+    padding-top: 8%;
+}
+.address{
+    font-family:'Gill Sans', sans-serif;
+    padding-top: 1%;
+    font-size: large;
+
+}
+
+.address_space{
+    padding-top: 25%;
+    padding-left: 2%;
+}
+
+#edit_button {
+    border-radius: 15%;
+    color: rgb(47, 81, 30);
+    border-color: #F6DFDC;
+    background-color: rgb(255, 232, 236);
+    transition: background-color 0.3s, color 0.3s; /* Add transition for smooth color change */
+}
+
+#edit_button:hover {
+    background-color: rgb(47, 81, 30); /* Change background color on hover */
+    color: #F6DFDC; /* Change text color on hover */
+}
+
+#address{
+    width: 300px;
+}
+
+#pic{
+    width: 300px;
+   
+}
+#name{
+    width: 300px;
+}
+.niceFont{
+    font-family:'Gill Sans', sans-serif;
+    color: rgb(78, 58, 58);
+    font-size:large;
+}
+
+
+/* .buttons{
+    background-color: rgb(47, 81, 30);
+    color: azure;
+    border: hidden;
+    border-radius: 5%;
+   
+
+
+/* CSS */
+.buttons {
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: rgb(2, 84, 2);
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+ 
+  
+}
+
+.buttons:hover {
+  box-shadow: rgba(18, 124, 59, 0.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+#results_header{
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
+    padding-top: 4%;
+
+}
+.locs{
+    padding-left: 5%;
+}
+.Dishes{
+    padding-left: 5%;
+}
+.Dishes-label {
+    font-weight: bold;
+}
+
+
+/* CSS for result cards */
+.result-card {
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    padding: 10px; /* Add padding inside the card */
+    margin-bottom: 10px; /* Add margin between cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+    background-color:#f9f9f9; /* Set background color */
+    
+}
+
+/* .result-card .result {
+    /* Styles for the content inside the card */
+    /* You can add additional styles here */
+
+
+/* Styles for the restaurant name */
+.result-card .NAME {
+    /* Make the name bold */
+    font-size: 18px; /* Adjust the font size */
+    color: #333; /* Set text color */
+    margin-bottom: 5px; /* Add margin at the bottom */
+    font-family:'Gill Sans', sans-serif;
+    font-weight: 110;
+    font-size: x-large;
+    padding-left: 5%;
+    text-decoration: underline;
+    cursor: pointer;
+
+    
+}
+
+/* Styles for the location */
+.result-card .locs {
+    font-size: 14px; /* Adjust the font size */
+    color: #666; /* Set text color */
+    margin-bottom: 5px; /* Add margin at the bottom */
+}
+
+/* Styles for the popular dishes */
+.result-card .Dishes {
+    font-size: 14px; /* Adjust the font size */
+    color: #666; /* Set text color */
+}
+
+
+.result-card .locs, .result-card .Dishes {
+    font-size: 14px;
+    color: #726363;
+    margin-bottom: 5px;
+    
+}
+
+.result-card .label {
+    font-weight: bold;
+    color: #000000;
+    margin-right: 5px;
+    color:rgb(13, 119, 79);
+    font-size: 100%;
+    
+}
+.noResults{
+    padding-top: 20%;
+    text-align:center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: xx-large;
+}
+
+#addHead{
+   padding-left: 10% ;
+   padding-top: 2%;
+}
+#counter{
+   text-decoration-color: #a09999;
+}
+.addsub{
+    padding-left: 50%;
+}
+#submit_button{
+    padding-left: 100%;
+    padding-right: 100%;
+}
+
+
+.error {
+    display: none;
+    background-color: rgb(245, 117, 117); /* Light red background color */
+    color: white; /* Text color */
+    padding: 10px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.success-card {
+    background-color: #d4edda; /* Light green background */
+    border: 1px solid #c3e6cb; /* Light green border */
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px; /* Optional: Add margin to separate from other elements */
+   
+}
+.success-message {
+    color: #155724; /* Dark green text color */
+    font-weight: bold; /* Bold text */
+}
+
+.success-button {
+    background-color: #105c21; /* Dark green button background */
+    color: #fff; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.success-button:hover {
+    background-color: #28913f; /* Darker green on hover */
+}
+.sp{
+    padding-top: 13%;
+}
+
+/* .redborder{
+    /* border-color: red;
+    border-style: solid;
+    box-shadow: red;
+    border-radius: 5%; */ 
+
+
+.red{
+    color: red;
+}
+.redborder:focus {
+    border: 2px solid red;
+    outline: none; /* Optional: to remove default focus outline */
+    border-radius: 5%;
+}
+
+.add{
+    font-size: medium;
+    padding-top: 10%;
+    padding-left: 16%;
+    line-height: 2cqmin;
+}
+
+.addloc{
+    font-size: medium;
+    padding-top: 2%;
+    text-align: bottom;
+   
+}
+
+ 
